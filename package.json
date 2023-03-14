@@ -1,12 +1,18 @@
 {
   "name": "kime",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Korean virtual IME",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/kime.umd.cjs",
+  "module": "./dist/kime.js",
+  "exports": {
+    ".": {
+      "import": "./dist/kime.js",
+      "require": "./dist/kime.umd.cjs"
+    }
   },
   "repository": {
     "type": "git",
@@ -17,7 +23,17 @@
     "url": "https://github.com/60fov/Kime/issues"
   },
   "homepage": "https://github.com/60fov/Kime#readme",
-  "dependencies": {
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4",
+    "vite-plugin-dts": "^2.1.0",
     "vitest": "^0.29.2"
   }
 }

@@ -1,9 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { buffer } from '../util'
+import { buffer } from '~/util'
 describe('buffer', () => {
-
-    const data = ['a', 'b', 'c']
-
     test('buffer consume', () => {
         const data = ['a', 'b', 'c']
         const buf = buffer(data)

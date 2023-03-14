@@ -1,16 +1,21 @@
-import { compose, composeBlock, composeJamo, composeSyllable, decompose, decomposeBlock, initialJamoOffset, isFinalJamo, isInitialJamo, isMedialJamo, jamo } from '../jamo'
+import {
+    compose, composeBlock, composeJamo, composeSyllable,
+    decompose, decomposeBlock,
+    initialJamoOffset, isFinalJamo, isInitialJamo, isMedialJamo,
+    jamo
+} from '~/jamo'
 import { describe, expect, test } from 'vitest'
 
 describe('hangul', () => {
     const jamoCodeMap = (arr: string[]) => arr.map(j => [j, j.charCodeAt(0)])
 
-    test.each(jamoCodeMap(jamo.initial))('%s: %d', (j, code) => {
+    test.each(jamoCodeMap(jamo.initial))('%s: %d', (j) => {
         expect(j).toSatisfy(isInitialJamo)
     })
-    test.each(jamoCodeMap(jamo.medial))('%s: %d', (j, code) => {
+    test.each(jamoCodeMap(jamo.medial))('%s: %d', (j) => {
         expect(j).toSatisfy(isMedialJamo)
     })
-    test.each(jamoCodeMap(jamo.final))('%s: %d', (j, code) => {
+    test.each(jamoCodeMap(jamo.final))('%s: %d', (j) => {
         expect(j).toSatisfy(isFinalJamo)
     })
     test.each([
@@ -25,7 +30,7 @@ describe('hangul', () => {
         expect(composeJamo(pre, post)).toBe(jamo)
     })
 
-    test.each([['ㅜ', 'ㅅ', 'ㅞ']])('%s + %s = %s', (pre, post, jamo) => {
+    test.each([['ㅜ', 'ㅅ', 'ㅞ']])('%s + %s = %s', (pre, post) => {
         expect(composeJamo(pre, post)).toBeUndefined()
     })
 

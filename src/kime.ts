@@ -1,4 +1,4 @@
-import { keyLookUp, getKeymap } from './keylayout'
+import { keyLookUp, getKeymap } from '~/keylayout'
 import {
     isInitialJamo, isMedialJamo, isFinalJamo,
     initialJamoOffset, medialJamoOffset, finalJamoOffset,
@@ -6,7 +6,7 @@ import {
     decomposeCompatibilityJamo, decomposeBlock, decompose
 } from './jamo'
 
-export default {
+const kime = {
     keyLookUp,
     key: keyLookUp,
     getKeymap,
@@ -15,6 +15,8 @@ export default {
     composeJamo, composeSyllable, composeBlock, compose,
     decomposeCompatibilityJamo, decomposeBlock, decompose
 }
+
+export default kime
 
 /* TODO consider group access 
     kime.key...

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { keyLookUp } from '../keylayout'
+import { keyLookUp } from '~/keylayout'
 
 describe('qwerty-sebeolsik', () => {
     test.each([
@@ -12,5 +12,4 @@ describe('qwerty-sebeolsik', () => {
     ])('%s -> %s', (k, j) => {
         expect(keyLookUp(k)).toBe(j)
     })
-
 })
