@@ -1,0 +1,23 @@
+{
+  "name": "kime",
+  "version": "0.1.0",
+  "description": "Korean virtual IME",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/60fov/Kime.git"
+  },
+  "author": "60fov",
+  "bugs": {
+    "url": "https://github.com/60fov/Kime/issues"
+  },
+  "homepage": "https://github.com/60fov/Kime#readme",
+  "dependencies": {
+    "vitest": "^0.29.2"
+  }
+}
