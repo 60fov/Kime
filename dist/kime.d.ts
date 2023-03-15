@@ -1,0 +1,21 @@
+import { keyLookUp, getKeymap } from './kime/keylayout';
+import { isInitialJamo, isMedialJamo, isFinalJamo, initialJamoOffset, medialJamoOffset, finalJamoOffset, composeJamo, composeSyllable } from './kime/jamo';
+declare const kime: {
+    keyLookUp: typeof keyLookUp;
+    key: typeof keyLookUp;
+    getKeymap: typeof getKeymap;
+    isInitialJamo: typeof isInitialJamo;
+    isMedialJamo: typeof isMedialJamo;
+    isFinalJamo: typeof isFinalJamo;
+    initialJamoOffset: typeof initialJamoOffset;
+    medialJamoOffset: typeof medialJamoOffset;
+    finalJamoOffset: typeof finalJamoOffset;
+    composeJamo: typeof composeJamo;
+    composeSyllable: typeof composeSyllable;
+    composeBlock: (input: string | string[]) => string[];
+    compose: (blocks: string[], maxIterations?: number) => string[];
+    decomposeCompatibilityJamo: (cjamo: string) => string[] | undefined;
+    decomposeBlock: (block: string) => string[];
+    decompose: (blocks: string) => string[];
+};
+export default kime;

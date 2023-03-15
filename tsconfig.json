@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    // "rootDir": "./src",
+    "declaration": true,
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,
@@ -24,10 +20,16 @@
     "baseUrl": ".",
     "paths": {
       "~/*": [
-        "./src/*"
+        "src/*"
       ],
-    }
+    },
+    "lib": [
+      "ESNext",
+      "DOM"
+    ]
   },
-  "include": ["src", "tests", "vite.config.js"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "dist",
+    "node_modules",
+  ]
 }

@@ -3,7 +3,7 @@ import {
     decompose, decomposeBlock,
     initialJamoOffset, isFinalJamo, isInitialJamo, isMedialJamo,
     jamo
-} from '~/jamo'
+} from '~/kime/jamo'
 import { describe, expect, test } from 'vitest'
 
 describe('hangul', () => {

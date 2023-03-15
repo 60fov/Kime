@@ -1,6 +1,6 @@
 import { type RefObject, useCallback, useEffect, useRef, useState } from "react"
 import kime from "../kime"
-import { jamo, decomposeBlock, compose } from "../jamo"
+import { jamo, decomposeBlock, compose } from "../kime/jamo"
 
 // TODO: clean up
 
@@ -13,7 +13,8 @@ export interface KimeInput {
 const useKime = (
     // TODO: consider content editable elements
     inputRef: RefObject<HTMLInputElement>,
-    options?: AddEventListenerOptions): { input: KimeInput, composing: boolean } => {
+    // options?: AddEventListenerOptions
+    ): { input: KimeInput, composing: boolean } => {
 
     const [composing, setComposing] = useState(false)
     const [value, setValue] = useState('')
@@ -63,7 +64,7 @@ const useKime = (
                 const splitInput = value.split('')
                 const last = splitInput.pop()
                 if (composing && last) {
-                    let dl = decomposeBlock(last)
+                    const dl = decomposeBlock(last)
                     dl.pop()
                     if (dl.length) {
                         splitInput.push(compose(dl).join(''))

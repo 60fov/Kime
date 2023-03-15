@@ -1,10 +1,11 @@
-import { keyLookUp, getKeymap } from '~/keylayout'
+import { keyLookUp, getKeymap } from '~/kime/keylayout'
+
 import {
     isInitialJamo, isMedialJamo, isFinalJamo,
     initialJamoOffset, medialJamoOffset, finalJamoOffset,
     composeJamo, composeSyllable, composeBlock, compose,
     decomposeCompatibilityJamo, decomposeBlock, decompose
-} from './jamo'
+} from '~/kime/jamo'
 
 const kime = {
     keyLookUp,
